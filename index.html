@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phobos Frontend</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">P</div>
+          <div>
+            <h1>Phobos</h1>
+            <p>Mission control interface</p>
+          </div>
+        </div>
+
+        <nav class="nav-section">
+          <button class="nav-item active">Overview</button>
+          <button class="nav-item">Conversations</button>
+          <button class="nav-item">Systems</button>
+          <button class="nav-item">Settings</button>
+        </nav>
+
+        <section class="status-card">
+          <h2>System Status</h2>
+          <ul>
+            <li><span class="status ok"></span> Core runtime online</li>
+            <li><span class="status ok"></span> Memory sync active</li>
+            <li><span class="status warn"></span> 1 pending action</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <h2>Operations Dashboard</h2>
+            <p>Monitor reasoning runs and interact with Phobos.</p>
+          </div>
+          <button id="newSessionBtn" class="primary-btn">New session</button>
+        </header>
+
+        <section class="metrics-grid">
+          <article class="metric-card">
+            <h3>Active sessions</h3>
+            <p class="metric-value" id="activeSessions">3</p>
+          </article>
+          <article class="metric-card">
+            <h3>Tasks completed</h3>
+            <p class="metric-value" id="tasksCompleted">47</p>
+          </article>
+          <article class="metric-card">
+            <h3>Latency</h3>
+            <p class="metric-value">212ms</p>
+          </article>
+        </section>
+
+        <section class="chat-card">
+          <h3>Quick interaction</h3>
+          <div class="chat-log" id="chatLog">
+            <div class="message bot">Phobos ready. Describe the objective.</div>
+          </div>
+          <form id="chatForm" class="chat-form">
+            <input
+              id="chatInput"
+              type="text"
+              placeholder="Ask Phobos to plan, explain, or execute..."
+              required
+            />
+            <button type="submit" class="primary-btn">Send</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
